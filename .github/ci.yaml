@@ -1,0 +1,37 @@
+name: CI Pipeline
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    name: Run Tests and Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Linting
+        run: npm run lint
+
+      - name: Run Tests with Coverage
+        run: npm test -- --coverage
+
+      - name: Save Coverage Report
+        run: mkdir -p coverage && cp -r ./coverage ./coverage-reports
+
+      - name: Upload Coverage Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-coverage-report
+          path: ./coverage-reports
+          retention-days: 7

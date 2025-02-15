@@ -1,0 +1,44 @@
+# Node modules
+node_modules/
+npm-debug.log*
+yarn.lock
+.pnpm-debug.log*
+package-lock.json
+
+# Logs
+logs/
+*.log
+yarn-error.log
+pnpm-debug.log
+.npm/
+
+# Jest coverage & reports
+coverage/
+jest-report/
+
+# Build artifacts
+dist/
+build/
+.out/
+.out-ts/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
+.cache/

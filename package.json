@@ -1,0 +1,20 @@
+{
+  "name": "js-testing-quick-wins",
+  "version": "1.0.0",
+  "description": "Some best practices in JavaScript testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --runInBand",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "jest": "^29.0.0"
+  },
+  "dependencies": {
+    "module-alias": "^2.2.3"
+  },
+  "_moduleAliases": {
+    "src": "./src"
+  }
+}
